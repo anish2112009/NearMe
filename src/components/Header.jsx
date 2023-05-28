@@ -2,8 +2,23 @@ import React from 'react'
 import { Flex, InputGroup, InputRightElement } from '@chakra-ui/react'
 import {BiSearch} from 'react-icons/bi'
 import { Input } from '@chakra-ui/react'
+import { useState } from 'react'
 
-export default function Header() {
+export default function Header({ onSearch }) {
+
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    setSearchValue(value);
+    
+  };
+
+  const handleSearch = () => {
+    //onSearch(searchValue); // Invoke the callback function with the search value
+    console.log(searchValue);
+    onSearch(searchValue);
+  };
   return (
     <Flex
 
@@ -25,8 +40,8 @@ export default function Header() {
         >
           <InputRightElement
           zIndex={50}
-          pointerEvents={'none'}
-          children={<BiSearch color='gray.700' fontSize={20}/>}
+          
+          children={<BiSearch color='gray.700' fontSize={20} onClick={handleSearch}  />}
           />
           <Input type='text'  
            placeholder='Search Near By...'
@@ -37,6 +52,8 @@ export default function Header() {
            _focus={{bg:'whiteAplha.800',outline:'none'}}
           _placeholder={{color:'gray.700'}}
           bg={'whiteApha.800'}
+          value={searchValue}
+        onChange={handleInputChange}
           
           />
         </InputGroup>
