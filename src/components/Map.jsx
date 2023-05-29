@@ -27,9 +27,9 @@ L.Icon.Default.mergeOptions({
 
 
 
-export default function Map({locationss}) {
+export default function Map({locationss,startt}) {
    
-   console.log(locationss.length,3)
+   console.log(locationss,3)
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [position,setPosition]=useState(null);
@@ -51,7 +51,7 @@ export default function Map({locationss}) {
      // console.log(locationss[i].lat,8)
     }}
     help();
-    let totalLocations = locationss.length;
+    let totalLocations = locationss.length+0.0000001;
     
   
      centralLatitude = totalLatitude / totalLocations;
@@ -59,19 +59,7 @@ export default function Map({locationss}) {
    //console.log(centralLatitude,8)
    setPosition([centralLatitude,centralLongitude]);
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        },
-        (error) => {
-          console.error('Error getting geolocation:', error);
-        }
-      );
-    } else {
-      console.error('Geolocation is not supported by this browser.');
-    }
+    
   }, [locationss]);
   //console.log(latitude);
   //console.log(longitude);
@@ -82,7 +70,7 @@ export default function Map({locationss}) {
   // },[isLoading])
    console.log(position,5);
   
-     if(position!=null){
+     if(position!=null && startt!=null){
   return (
     
     <Box
@@ -100,7 +88,7 @@ export default function Map({locationss}) {
     maxzoom={100}
   />
 
- <Marker position={[latitude,longitude]} >
+ <Marker position={[startt.latitude,startt.longitude]} >
       <Popup>
         You are Here<br/> zoom in to view
       </Popup>
