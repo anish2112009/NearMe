@@ -1,11 +1,11 @@
 import React from 'react'
 import { Flex ,Text,Image,} from '@chakra-ui/react'
-import {Rating} from '@mui/material'
+//import {Rating} from '@mui/material'
 import ReactStars from 'react-stars'
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import axios from 'axios';
-import NearMeIcon from '@mui/icons-material/NearMe';
+//import axios from 'axios';
+//import NearMeIcon from '@mui/icons-material/NearMe';
 import AssistantDirectionIcon from '@mui/icons-material/AssistantDirection';
 import { useState } from 'react';
 
@@ -64,7 +64,7 @@ export default function PlaceDetail({place,onAssistantDirectionClick}) {
     direction={'column'}
     alignItems={'center'}
     justifyContent={'space-between'}
-       shadow="md"
+       
       transform={isHovered ? "scale(1.02)" : "scale(1)"}
       transition="transform 0.2s ease-in-out"
       onMouseEnter={handleHover}

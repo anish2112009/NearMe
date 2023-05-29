@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import { MapContainer, TileLayer, useMap,Marker,Popup } from 'react-leaflet'
+import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
