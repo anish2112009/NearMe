@@ -53,7 +53,7 @@ export default function List({places,isLoading,onAssistantDirectionClick}) {
             </Flex>
         )
     }
-
+if(places && places.length>0){
     return (
     <Flex
     direction={'column'}
@@ -79,5 +79,34 @@ export default function List({places,isLoading,onAssistantDirectionClick}) {
         >
             {places && places.map((place,i)=><PlaceDetail place={place} key={i} onAssistantDirectionClick={handleAssistantDirectionClick} dummy={placee}/>)}
         </Flex>
-    </Flex>)
+    </Flex>)}
+    else{
+      return (
+        <Flex
+        direction={'column'}
+        bg={'white'}
+        width={'37vw'}
+        height={'100vh'}
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={1}
+        overflow={'hidden'}
+        px={2}
+        
+        >
+            <Flex
+    
+            flex={1}
+            overflowY={'scroll'}
+            mt={16}
+            direction={'column'}
+            
+    
+            >
+                <b>No Result Found Search Another</b>
+            </Flex>
+        </Flex>
+      )
+    }
 }

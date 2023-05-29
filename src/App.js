@@ -117,7 +117,7 @@ function App() {
                   };
                   locations.push(newLocation);
                 }
-                 await setLocationss(locations);
+                 await setLocationss(locations);//clicked=false;
                  //console.log(locations);
               } catch (err) {
                   console.error(err);

@@ -70,7 +70,7 @@ export default function Map({locationss,startt}) {
   // },[isLoading])
    console.log(position,5);
   
-     if(position!=null && startt!=null){
+     if((position!=null && position[0]!=0) && startt!=null){
   return (
     
     <Box
@@ -113,7 +113,7 @@ export default function Map({locationss,startt}) {
       return (
         <div
         
-        ><b>Loading...</b>
+        ><b>No Result Found ...</b>
           <Spinner
   thickness='4px'
   speed='0.65s'
