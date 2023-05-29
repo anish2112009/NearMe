@@ -41,10 +41,10 @@ export default function Header({ onSearch }) {
           <InputRightElement
           zIndex={50}
           
-          children={<BiSearch color='gray.700' fontSize={20} onClick={handleSearch}  />}
+          children={<BiSearch color='gray.700' fontSize={20} onClick={handleSearch} cursor={'pointer'} />}
           />
           <Input type='text'  
-           placeholder='Search Near By...'
+           placeholder='Search restaurants,atm,airport etc.. Near By...'
           // variant={'filled'}
           fontSize={18}
           color={'gray.700'}

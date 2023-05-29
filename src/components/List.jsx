@@ -66,6 +66,7 @@ export default function List({places,isLoading,onAssistantDirectionClick}) {
     zIndex={1}
     overflow={'hidden'}
     px={2}
+    
     >
         <Flex
 
@@ -73,6 +74,7 @@ export default function List({places,isLoading,onAssistantDirectionClick}) {
         overflowY={'scroll'}
         mt={16}
         direction={'column'}
+        
 
         >
             {places && places.map((place,i)=><PlaceDetail place={place} key={i} onAssistantDirectionClick={handleAssistantDirectionClick} dummy={placee}/>)}

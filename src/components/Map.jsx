@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useState,useEffect } from 'react'
+import { Spinner } from '@chakra-ui/react';
 
 const redIcon = L.icon({
   iconUrl: require('./marker-icon-2x-red.png'), // Path to the red marker icon image
@@ -120,9 +121,20 @@ export default function Map({locationss}) {
     </Box>
   )
     }
-//     else{
-//       return (
-//         <div>Loading...</div>
-//       )
-//     }
+    else{
+      return (
+        <div
+        
+        ><b>Loading...</b>
+          <Spinner
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+ 
+/>
+        </div>
+      )
+    }
 }

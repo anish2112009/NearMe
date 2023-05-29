@@ -28,6 +28,7 @@
     "react-rater": "^6.0.5",
     "react-scripts": "5.0.1",
     "react-stars": "^2.2.5",
+    "request": "^2.88.2",
     "sass": "^1.62.1",
     "stream-http": "^3.2.0",
     "util": "^0.12.5",

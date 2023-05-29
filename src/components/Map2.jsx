@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useState,useEffect } from 'react'
+import { Spinner } from '@chakra-ui/react';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -79,7 +80,18 @@ export default function Map2() {
     }
      else{
        return (
-        <div>Loading...</div>
+        <div style={{marginLeft:80}}>
+          <span style={{marginLeft:200}}><b>Make sure you have an active internet and your location is turned ON</b></span>
+          <Spinner
+          marginBottom={8}
+          marginRight={10}
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/>
+        </div>
       )
     }
 }

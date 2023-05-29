@@ -44,7 +44,7 @@ function App() {
   console.log('ek',place)
   }
 
-  
+  //console.log(process.env.REACT_APP_API_KEY,'hu');
   useEffect(()=>{
 
    const api=()=>{ 
@@ -67,12 +67,12 @@ function App() {
                   method: 'GET',
                   headers: {
                     Accept: 'application/json',
-                    Authorization: 'fsq3m8xgnkPqWME5UwXWsp3MdG54LchN7MMoX7oNtXWq2WE=',
+                    Authorization: process.env.REACT_APP_API_KEY,
                   }
                 }
               );
               const data = await results.json();
-              //console.log(data.results);
+              console.log(data.results);
               await setPlaces(data.results);
               await setIsloading(false);
              // console.log(places);
